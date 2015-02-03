@@ -1,4 +1,18 @@
 //= depend_on_asset "ZeroClipboard.swf"
-ZeroClipboard.config({
-  swfPath: '<%= image_path "ZeroClipboard.swf" %>'
-});
+(function(window, undefined) {
+  "use strict";
+  var settings = {
+    swfPath: '<%= image_path "ZeroClipboard.swf" %>'
+  };
+  if (typeof define === "function" && define.amd) {
+    require(["ZeroClipboard"], function(ZeroClipboard) {
+      ZeroClipboard.config(settings);
+    });
+  } else if (typeof module === "object" && module && typeof module.exports === "object" && module.exports) {
+    require("ZeroClipboard").config(settings);
+  } else {
+    window.ZeroClipboard.config(settings);
+  }
+})(function() {
+  return this || window;
+}());
