@@ -2,7 +2,7 @@
 (function(window, undefined) {
   "use strict";
   var settings = {
-    swfPath: '<%= image_path "ZeroClipboard.swf" %>'
+    swfPath: <%= image_path("ZeroClipboard.swf").to_json %>
   };
   if (typeof define === "function" && define.amd) {
     require(["ZeroClipboard"], function(ZeroClipboard) {
