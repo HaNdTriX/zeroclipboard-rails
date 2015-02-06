@@ -1,5 +1,5 @@
 //= depend_on_asset "ZeroClipboard.swf"
-(function(window, undefined) {
+(function(global, undefined) {
   "use strict";
   var settings = {
     swfPath: <%= image_path("ZeroClipboard.swf").to_json %>
@@ -11,7 +11,7 @@
   } else if (typeof module === "object" && module && typeof module.exports === "object" && module.exports) {
     require("ZeroClipboard").config(settings);
   } else {
-    window.ZeroClipboard.config(settings);
+    global.ZeroClipboard.config(settings);
   }
 })(function() {
   return this || window;
