@@ -5,11 +5,11 @@
     swfPath: <%= image_path("ZeroClipboard.swf").to_json %>
   };
   if (typeof define === "function" && define.amd) {
-    require(["ZeroClipboard"], function(ZeroClipboard) {
+    require(["zeroclipboard"], function(ZeroClipboard) {
       ZeroClipboard.config(settings);
     });
   } else if (typeof module === "object" && module && typeof module.exports === "object" && module.exports) {
-    require("ZeroClipboard").config(settings);
+    require("zeroclipboard").config(settings);
   } else {
     global.ZeroClipboard.config(settings);
   }
