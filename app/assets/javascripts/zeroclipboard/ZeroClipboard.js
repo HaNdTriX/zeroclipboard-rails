@@ -2568,7 +2568,7 @@
     return ZeroClipboard.getData.apply(this, _args(arguments));
   };
   if (typeof define === "function" && define.amd) {
-    define(function() {
+    define("zeroclipboard", function() {
       return ZeroClipboard;
     });
   } else if (typeof module === "object" && module && typeof module.exports === "object" && module.exports) {
